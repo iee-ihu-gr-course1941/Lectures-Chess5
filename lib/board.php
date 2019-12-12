@@ -174,10 +174,10 @@ function pawn_moves(&$board,$b,$x,$y) {
 	$start_row = ($b=='W')?2:7;
 	$moves=[];
 	
-	if($board[$x][$y+$direction]['piece_color']==null) {
+	if(($y+$direction)<=8 && ($y+$direction)>=1 && $board[$x][$y+$direction]['piece_color']==null) {
 		$move=['x'=>$x, 'y'=>$y+$direction];
 		$moves[]=$move;
-		if($y==$start_row && $board[$x][$y+2*$direction]['piece_color']==null) {
+		if(($y+2*$direction)<=8 && ($y+2*$direction)>=1 && $y==$start_row && $board[$x][$y+2*$direction]['piece_color']==null) {
 			$move=['x'=>$x, 'y'=>$y+2*$direction];
 			$moves[]=$move;
 		}

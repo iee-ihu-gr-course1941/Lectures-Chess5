@@ -207,7 +207,7 @@ function start_dragging ( event, ui ) {
 	var o=event.target.parentNode;
 	var id = o.id;
 	var a = id.trim().split(/_/);
-	
+	$('#the_move_dest').html('');
 	$(o).addClass('tomove');
 	for(i=0;i<board.length;i++) {
 		if(board[i].x==a[1] && board[i].y==a[2] && board[i].moves && Array.isArray(board[i].moves)) {
